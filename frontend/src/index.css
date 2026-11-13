@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #0A0D14;
+  color: #F3F4F6;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for a slick cinema experience */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0D14;
+}
+::-webkit-scrollbar-thumb {
+  background: #262E42;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B35;
+}
+
+/* Screen Curve Effect for Seat Map */
+.screen-curve {
+  position: relative;
+  width: 85%;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, #38BDF8, #818CF8, #38BDF8, transparent);
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 0 30px 4px rgba(56, 189, 248, 0.45);
+}
+
+/* Glassmorphism panels */
+.glass-panel {
+  background: rgba(18, 22, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Animated continuous indeterminate loading bar */
+@keyframes loadingProgress {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loadingProgress 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Radar sweep scan animation across auditorium */
+@keyframes radarSweep {
+  0% {
+    top: -20%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 2s ease-in-out infinite;
+}
+
+/* Pulse seat wave shimmer */
+@keyframes seatPulseWave {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-seat-pulse {
+  animation: seatPulseWave 1.4s ease-in-out infinite;
+}

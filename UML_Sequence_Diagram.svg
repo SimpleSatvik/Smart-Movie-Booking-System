@@ -1,0 +1,125 @@
+<svg width="1450" height="950" viewBox="0 0 1450 950" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#334155" />
+    </marker>
+    <marker id="arrow-open" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polyline points="1 1, 7 3, 1 5" fill="none" stroke="#334155" stroke-width="1.2" />
+    </marker>
+    <marker id="triangle" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+    </marker>
+  </defs>
+<text x="725" y="45" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="22" font-family="sans-serif">UML Sequence Diagram</text>
+<text x="725" y="70" text-anchor="middle" fill="#64748b" font-size="13" font-family="sans-serif">Concurrent Seat Reservation with PostgreSQL Row-Level Locking (Feature 2 Highlight)</text>
+<rect x="55" y="95" width="130" height="50" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" rx="4"/>
+<text x="120" y="112" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">User A</text>
+<text x="120" y="128" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">(Client 1)</text>
+<line x1="120" y1="145" x2="120" y2="880" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+<rect x="275" y="95" width="130" height="50" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" rx="4"/>
+<text x="340" y="112" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">User B</text>
+<text x="340" y="128" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">(Client 2)</text>
+<line x1="340" y1="145" x2="340" y2="880" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+<rect x="535" y="95" width="130" height="50" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" rx="4"/>
+<text x="600" y="112" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Booking</text>
+<text x="600" y="128" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Controller</text>
+<line x1="600" y1="145" x2="600" y2="880" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+<rect x="795" y="95" width="130" height="50" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" rx="4"/>
+<text x="860" y="112" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Booking</text>
+<text x="860" y="128" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Service</text>
+<line x1="860" y1="145" x2="860" y2="880" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+<rect x="1055" y="95" width="130" height="50" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" rx="4"/>
+<text x="1120" y="112" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Database</text>
+<text x="1120" y="128" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">(PostgreSQL)</text>
+<line x1="1120" y1="145" x2="1120" y2="880" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+<rect x="1275" y="95" width="130" height="50" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" rx="4"/>
+<text x="1340" y="112" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Payment</text>
+<text x="1340" y="128" text-anchor="middle" fill="#0f172a" font-weight="700" font-size="12" font-family="sans-serif">Gateway</text>
+<line x1="1340" y1="145" x2="1340" y2="880" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+<g>
+<line x1="120" y1="180" x2="600" y2="180" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="210" y="162" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="360" y="174" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">1: POST /api/bookings {showId: 1, seatId: [A5]}</text>
+</g>
+<g>
+<line x1="600" y1="215" x2="860" y2="215" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="580" y="197" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="730" y="209" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">2: reserveSeats(showId, seatIds)</text>
+</g>
+<g>
+<line x1="860" y1="255" x2="1120" y2="255" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="840" y="237" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="990" y="249" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">3: SELECT ... FOR UPDATE SKIP LOCKED</text>
+</g>
+<g>
+<line x1="1120" y1="295" x2="860" y2="295" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="840" y="277" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="990" y="289" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">4: Returns locked row for Seat A5</text>
+</g>
+<g>
+<path d="M 860 320 L 900 320 L 900 344 L 865 344" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="908" y="336" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">5: Set status='LOCKED', lockedUntil=NOW+10m</text>
+</g>
+<g>
+<line x1="340" y1="390" x2="600" y2="390" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="320" y="372" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="470" y="384" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">6: [SIMULTANEOUS] POST /api/bookings {seatId: [A5]}</text>
+</g>
+<g>
+<line x1="600" y1="425" x2="860" y2="425" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="580" y="407" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="730" y="419" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">7: reserveSeats(showId, seatIds)</text>
+</g>
+<g>
+<line x1="860" y1="465" x2="1120" y2="465" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="840" y="447" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="990" y="459" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">8: SELECT ... FOR UPDATE SKIP LOCKED</text>
+</g>
+<g>
+<line x1="1120" y1="505" x2="860" y2="505" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="840" y="487" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="990" y="499" text-anchor="middle" fill="#dc2626" font-size="11" font-family="sans-serif" font-weight="600">9: Returns EMPTY (Row A5 is locked by Txn A)</text>
+</g>
+<g>
+<line x1="860" y1="545" x2="600" y2="545" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="580" y="527" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="730" y="539" text-anchor="middle" fill="#dc2626" font-size="11" font-family="sans-serif" font-weight="600">10: Throw SeatAlreadyLockedException</text>
+</g>
+<g>
+<line x1="600" y1="580" x2="340" y2="580" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="320" y="562" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="470" y="574" text-anchor="middle" fill="#dc2626" font-size="11" font-family="sans-serif" font-weight="600">11: 409 Conflict: 'Seat is currently unavailable'</text>
+</g>
+<g>
+<line x1="860" y1="650" x2="1340" y2="650" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="950" y="632" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="1100" y="644" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">12: processPayment(amount, token)</text>
+</g>
+<g>
+<line x1="1340" y1="690" x2="860" y2="690" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="950" y="672" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="1100" y="684" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">13: Payment SUCCESS (txn_9481)</text>
+</g>
+<g>
+<line x1="860" y1="730" x2="1120" y2="730" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="840" y="712" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="990" y="724" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">14: UPDATE show_seat SET status='BOOKED'</text>
+</g>
+<g>
+<line x1="860" y1="765" x2="1120" y2="765" stroke="#2563eb" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<rect x="840" y="747" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="990" y="759" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">15: INSERT INTO bookings (ref, total, status)</text>
+</g>
+<g>
+<line x1="860" y1="805" x2="600" y2="805" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="580" y="787" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="730" y="799" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">16: Return BookingDTO + TicketDetails</text>
+</g>
+<g>
+<line x1="600" y1="840" x2="120" y2="840" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="210" y="822" width="300" height="15" fill="#ffffff" fill-opacity="0.9" rx="2"/>
+<text x="360" y="834" text-anchor="middle" fill="#0f172a" font-size="11" font-family="sans-serif" font-weight="600">17: 200 OK: Digital Ticket TKT-A92F1X</text>
+</g>
+</svg>

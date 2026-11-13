@@ -1,0 +1,26 @@
+# Server Port
+server.port=8080
+
+# PostgreSQL Database Configuration
+spring.datasource.url=jdbc:postgresql://<HOST>:<PORT>/<DATABASE>?sslmode=require
+spring.datasource.username=<USERNAME>
+spring.datasource.password=<PASSWORD>
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA / Hibernate settings
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# Open-in-view disabled for best practice
+spring.jpa.open-in-view=false
+
+# Google Gemini AI Configuration for Feature 6 (Vibe Search)
+gemini.api.key=YOUR_GEMINI_API_KEY
+gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent
+
+# SendGrid Email Configuration
+# Leave blank or "mock" for local dev console logging
+sendgrid.api.key=YOUR_SENDGRID_API_KEY
+sendgrid.from.email=your-email@example.com
