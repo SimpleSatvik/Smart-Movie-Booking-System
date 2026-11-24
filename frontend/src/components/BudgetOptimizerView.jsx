@@ -42,6 +42,7 @@ export default function BudgetOptimizerView({ onSelectShowForBooking, onNavigate
         if (totalCost <= targetBudget) {
           validShows.push({
             showId: (mIdx + 1) * 10 + (tier.pricePerSeat / 50),
+            movieId: movie.id,
             movieTitle: movie.title,
             theatreName: movie.theatre,
             showTime: movie.time,

@@ -58,7 +58,7 @@ export default function SeatSelectionModal({ movie, onClose, onBookingSuccess, o
   // 1. Fetch shows for the selected movie (FILTER STRICTLY FOR FUTURE UPCOMING SHOWS FROM DATABASE)
   useEffect(() => {
     loadShows();
-  }, [movie?.id, movie?.title]);
+  }, [movie?.id, movie?.title, movie?.initialShowId]);
 
   const loadShows = async () => {
     try {
@@ -88,7 +88,10 @@ export default function SeatSelectionModal({ movie, onClose, onBookingSuccess, o
 
       if (futureShows.length > 0) {
         setShows(futureShows);
-        setSelectedShow(futureShows[0]);
+        const targetedShow = movie?.initialShowId
+          ? futureShows.find(s => String(s.showId || s.id) === String(movie.initialShowId))
+          : null;
+        setSelectedShow(targetedShow || futureShows[0]);
       } else {
         setShows([]);
         setSelectedShow(null);

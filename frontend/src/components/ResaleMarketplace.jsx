@@ -18,6 +18,7 @@ export default function ResaleMarketplace({ onOpenAuth, onNavigateTab, initialBo
   // New Listing Modal state
   const [isListModalOpen, setIsListModalOpen] = useState(false);
   const [myBookings, setMyBookings] = useState([]);
+  const [fetchingBookings, setFetchingBookings] = useState(false);
   const [selectedBookingRef, setSelectedBookingRef] = useState('');
   const [selectedSeat, setSelectedSeat] = useState('');
   const [resalePriceInput, setResalePriceInput] = useState('');
@@ -60,6 +61,7 @@ export default function ResaleMarketplace({ onOpenAuth, onNavigateTab, initialBo
 
   // 2. Fetch user's real confirmed bookings (UPCOMING FUTURE SHOWS ONLY)
   const loadMyBookings = async () => {
+    setFetchingBookings(true);
     let rawBookings = [];
     if (user) {
       try {
@@ -70,7 +72,11 @@ export default function ResaleMarketplace({ onOpenAuth, onNavigateTab, initialBo
         }
       } catch (err) {
         console.warn('Server bookings fetch notice:', err.message);
+      } finally {
+        setFetchingBookings(false);
       }
+    } else {
+      setFetchingBookings(false);
     }
 
     // STRICT RESALE FILTER:
@@ -474,7 +480,17 @@ export default function ResaleMarketplace({ onOpenAuth, onNavigateTab, initialBo
               Select which of your confirmed upcoming bookings you want to sell from. Past screenings and cancelled tickets cannot be resold.
             </p>
 
-            {myBookings.length === 0 ? (
+            {fetchingBookings ? (
+              <div className="py-10 px-4 bg-dark-bg/60 rounded-2xl border border-dark-border text-center space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-primary-500/10 text-primary-400 border border-primary-500/20 flex items-center justify-center mx-auto">
+                  <RefreshCw className="w-6 h-6 animate-spin" />
+                </div>
+                <h3 className="text-sm font-bold text-white">Fetching Your Upcoming Tickets...</h3>
+                <p className="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">
+                  Checking your confirmed bookings from your account to find eligible shows for resale.
+                </p>
+              </div>
+            ) : myBookings.length === 0 ? (
               <div className="py-8 px-4 bg-dark-bg/60 rounded-2xl border border-dark-border text-center space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mx-auto">
                   <Film className="w-6 h-6" />
