@@ -169,10 +169,11 @@ function MainLayout() {
               onNavigateTab={setActiveTab}
               onSelectShowForBooking={(show) => {
                 setSelectedMovieForBooking({
-                  id: show.showId || 1,
+                  id: show.movieId || show.id || 1,
                   title: show.movieTitle,
-                  posterUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
-                  genre: 'Sci-Fi / IMAX'
+                  posterUrl: show.posterUrl || 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
+                  genre: show.genre || 'Sci-Fi / IMAX',
+                  initialShowId: show.showId
                 });
               }} 
             />
