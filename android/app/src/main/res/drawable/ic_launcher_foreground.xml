@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54">
+
+        <!-- Outer Glass Squircle Base -->
+        <path
+            android:fillColor="#E6151724"
+            android:strokeColor="#55FF5722"
+            android:strokeWidth="1.5"
+            android:pathData="M38,26 L70,26 C77.73,26 84,32.27 84,40 L84,68 C84,75.73 77.73,82 70,82 L38,82 C30.27,82 24,75.73 24,68 L24,40 C24,32.27 30.27,26 38,26 Z" />
+
+        <!-- Clapperboard Top Slanted Bar -->
+        <group
+            android:pivotX="34"
+            android:pivotY="42"
+            android:rotation="-6">
+            <!-- Arm Base -->
+            <path
+                android:fillColor="#1C1F2E"
+                android:pathData="M34,35 L74,35 C75.65,35 77,36.35 77,38 L77,44 C77,44.55 76.55,45 76,45 L33,45 C32.45,45 32,44.55 32,44 L32,37 C32,35.9 32.9,35 34,35 Z" />
+            <!-- Clapper Slanted Stripes (Coral) -->
+            <path
+                android:fillColor="#FF5722"
+                android:pathData="M36,35 L42,35 L38,45 L32,45 Z" />
+            <path
+                android:fillColor="#FF5722"
+                android:pathData="M48,35 L54,35 L50,45 L44,45 Z" />
+            <path
+                android:fillColor="#FF5722"
+                android:pathData="M60,35 L66,35 L62,45 L56,45 Z" />
+            <path
+                android:fillColor="#FF5722"
+                android:pathData="M72,35 L76,35 L74,45 L68,45 Z" />
+        </group>
+
+        <!-- Clapperboard Body (Vibrant Coral Gradient) -->
+        <path
+            android:fillColor="#FFFF5722"
+            android:strokeColor="#33FFFFFF"
+            android:strokeWidth="0.8"
+            android:pathData="M33,47 L75,47 C76.65,47 78,48.35 78,50 L78,69 C78,72.31 75.31,75 72,75 L36,75 C32.69,75 30,72.31 30,69 L30,50 C30,48.35 31.35,47 33,47 Z" />
+
+        <!-- Specular Sheen across Clapper Body -->
+        <path
+            android:fillColor="#25FFFFFF"
+            android:pathData="M33,47 L75,47 C76.65,47 78,48.35 78,50 L78,55 L30,55 L30,50 C30,48.35 31.35,47 33,47 Z" />
+
+        <!-- Star Sparkle 1 (Large, White) -->
+        <!-- Center at (46, 61), radius 6 -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M46,55 Q46,61 52,61 Q46,61 46,67 Q46,61 40,61 Q46,61 46,55 Z" />
+
+        <!-- Star Sparkle 2 (Smaller, Gold) -->
+        <!-- Center at (64, 57), radius 4 -->
+        <path
+            android:fillColor="#FFFFD54F"
+            android:pathData="M64,53 Q64,57 68,57 Q64,57 64,61 Q64,57 60,57 Q64,57 64,53 Z" />
+
+    </group>
+</vector>
